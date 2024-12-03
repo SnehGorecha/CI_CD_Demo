@@ -27,7 +27,6 @@ jobs:
 
       - name: Build and Archive
         run: |
-          cd "CI_CD"
           xcodebuild clean archive \
             -workspace "CI_CD_Demo.xcworkspace" \
             -scheme CI_CD_Demo \
@@ -37,7 +36,6 @@ jobs:
 
       - name: Export IPA
         run: |
-          cd "CI_CD"
           xcodebuild -exportArchive \
             -archivePath ./build/CI_CD_Demo.xcarchive \
             -exportOptionsPlist ./ExportOptions.plist \
