@@ -27,8 +27,9 @@ jobs:
 
       - name: Build and Archive
         run: |
-          xcodebuild build \
+          xcodebuild test \
             -workspace "CI_CD_Demo.xcworkspace" \
+            -scheme CI_CD_Demo \
             -sdk iphoneos \
             -archivePath ./build/CI_CD_Demo.xcarchive \
             CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
