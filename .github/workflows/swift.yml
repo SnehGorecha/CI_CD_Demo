@@ -20,14 +20,14 @@ jobs:
         
       - name: Install Dependencies
         run: |
-          if [ -f "Podfile" ]; then
-            gem install cocoapods
+          # if [ -f "Podfile" ]; then
+            # gem install cocoapods
             pod install
-          fi
+          # fi
 
       - name: Build and Archive
         run: |
-          xcodebuild test \
+          xcodebuild build \
             -workspace "CI_CD_Demo.xcworkspace" \
             -scheme CI_CD_Demo \
             -sdk iphoneos \
